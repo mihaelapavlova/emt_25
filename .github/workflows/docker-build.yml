@@ -1,8 +1,9 @@
- name: Build and Push Docker Images
+name: Build and Push Docker Images
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
   build:
@@ -31,4 +32,3 @@ jobs:
           context: ./frontend
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/emt-frontend:latest
-
