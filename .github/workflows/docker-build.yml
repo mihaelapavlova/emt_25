@@ -22,13 +22,13 @@ jobs:
       - name: Build and push backend image
         uses: docker/build-push-action@v4
         with:
-          context: ./backend
+          context: ./e-shop-backend-main
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/emt-backend:latest
 
       - name: Build and push frontend image
         uses: docker/build-push-action@v4
         with:
-          context: ./frontend
+          context: ./e-shop-frontend-main
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/emt-frontend:latest
